@@ -23,7 +23,8 @@
     "db:stop": "docker-compose -f scripts/docker-compose.yml down",
     "stress:init": "docker-compose -f scripts/stress-test/docker-compose.yml up --no-start && docker-compose -f scripts/stress-test/docker-compose.yml start",
     "stress:test": "node scripts/stress-test/knex-stress-test.js |  grep -A 5 -B 60 -- '- STATS '",
-    "stress:destroy": "docker-compose -f scripts/stress-test/docker-compose.yml stop"
+    "stress:destroy": "docker-compose -f scripts/stress-test/docker-compose.yml stop",
+    "web:build": "webpack"
   },
   "dependencies": {
     "bluebird": "^3.5.5",
@@ -81,7 +82,8 @@
     "tape": "^4.11.0",
     "toxiproxy-node-client": "^2.0.6",
     "typescript": "^3.5.3",
-    "webpack-cli": "^3.3.5"
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
   },
   "buildDependencies": [
     "rimraf"
